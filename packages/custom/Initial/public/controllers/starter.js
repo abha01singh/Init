@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  angular.module('mean.meanStarter')
+  angular.module('mean.initial')
     .controller('StarterController', StarterController)
 
   StarterController.$inject = ['$scope', 'Global']
@@ -10,7 +10,7 @@
     // Original scaffolded code.
     $scope.global = Global
     $scope.package = {
-      name: 'meanStarter'
+      name: 'initial'
     }
   }
 })()

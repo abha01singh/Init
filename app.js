@@ -2,9 +2,11 @@
 
 import 'angular/angular-csp.css'
 import 'angular-ui-select/select.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'angular-material/angular-material.min.css'
 
 import jQuery from 'jquery'
+import $ from 'jquery'
 import 'angular'
 import 'angular-ui-select/select'
 import 'angular-mocks'
@@ -13,11 +15,13 @@ import 'angular-resource'
 import 'angular-sanitize'
 import 'angular-ui-router'
 import 'angular-jwt'
+import 'angular-bootstrap/ui-bootstrap-tpls'
 import 'angular-aria'
 import 'angular-animate'
 import 'angular-material'
 
 window.$ = jQuery
+window.jQuery = jQuery
 
 angular.element(document).ready(function () {
   // Fixing facebook bug with redirect
@@ -28,7 +32,7 @@ angular.element(document).ready(function () {
 })
 
 function processModules (modules) {
-  var packageModules = ['ngCookies', 'ngResource', 'ui.router', 'ui.select', 'ngSanitize', 'ngMaterial']
+  var packageModules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'ui.select', 'ngSanitize', 'ngMaterial']
   var m
   var mn
   for (var index in modules) {
