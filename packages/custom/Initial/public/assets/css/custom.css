@@ -34,6 +34,11 @@
     border-bottom: none;
 }
 
+.scrollTo_animating,
+.scrollTo_animating * {
+    pointer-events: none !important;
+}
+
 /*
 b,
 strong {

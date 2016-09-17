@@ -1,16 +1,30 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+<html data-ng-controller="StarterController" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="StarterController" ng-cloak class="ng-cloak" ng-class="state" layout="column">
+<body ng-cloak class="ng-cloak" ng-class="bodyClass" layout="column">
     <md-toolbar layout="row" data-ng-include="'/initial/views/system/header.html'" data-role="navigation"></md-toolbar>
-    <div data-ng-include="'/admin/views/index.html'"></div>
-    {% block content %}{% endblock %}
-    <!-- <section class="content">
-        <section class="container">
-            {% block content %}{% endblock %}
-        </section>
-    </section> -->
+    <div ng-if="loggedin">
+        <div class="page-container">
+            {% include '../includes/sidebar.html' %}
+            <div class="container">
+                <div class="page animsition">
+                    <div class="page-content container-fluid">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!loggedin">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="site-footer">
+        <div class="site-footer-legal">© 2016 <a href="#">Initial</a></div>
+        <div class="site-footer-right">
+            Crafted with <i class="red-600 icon md-favorite"></i> by <a href="#">Initial</a>
+        </div>
+    </footer>
     {% include '../includes/foot.html' %}
 </body>
 
